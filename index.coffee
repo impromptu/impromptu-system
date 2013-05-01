@@ -1,9 +1,9 @@
 module.exports = (Impromptu) ->
   @register 'pwd', ->
-    process.cwd()
+    process.env.PWD
 
   @register 'prettyPwd', ->
-    cwd = process.cwd()
+    cwd = process.env.PWD
     if cwd.indexOf process.env.HOME == 0
       cwd = '~' + cwd.slice process.env.HOME.length
     cwd
