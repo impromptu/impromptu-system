@@ -22,3 +22,11 @@ module.exports = (Impromptu, register, system) ->
     update: (done) ->
       system.host (err, host) ->
         done err, host.split('.', 1)[0]
+
+  register 'jobsCount',
+    update: ->
+      parseInt process.env.IMPROMPTU_JOBS_COUNT, 10
+
+  register 'lastExitCode',
+    update: ->
+      parseInt process.env.IMPROMPTU_LAST_EXIT_CODE, 10
