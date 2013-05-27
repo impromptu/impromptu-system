@@ -11,8 +11,8 @@ module.exports = (Impromptu, register, system) ->
       cwd
 
   register 'user',
-    update: (done) ->
-      Impromptu.exec 'whoami', done
+    update: ->
+      process.env.USER
 
   register 'host',
     update: (done) ->
